@@ -1,4 +1,4 @@
-# FLoRIST: FLoRIST: Singular Value Thresholding for Efficient and Accurate Federated Fine-Tuning of Large Language Models
+# FLoRIST: Singular Value Thresholding for Efficient and Accurate Federated Fine-Tuning of Large Language Models
 
 This repository contains the official implementation of **[FLoRIST]** (FLoRIST: Singular Value Thresholding for Efficient and Accurate Federated Fine-Tuning of Large Language Models), submitted to NeurIPS 2025.
 
@@ -17,21 +17,23 @@ pip install -r requirements.txt
 
 ## Datasets
 
+We follow the same data format and directory structure as used in the original [FLoRA repository](https://github.com/ATP-1010/FederatedLLM). All datasets are stored in JSON format and should be placed in the appropriate folders.
 
-### Used Datasets
+### Available Datasets
 
-- **Wizard**: We use the training set of [WizardLM](https://huggingface.co/datasets/WizardLM/WizardLM_evol_instruct_70k), already downloaded and pre-split in `./data_wiz/`.  
-  If you wish to use a custom dataset, format it exactly as `./data_wiz/`, where each client's local dataset is stored as a JSONL file with instruction–response pairs.
+- **Wizard**  
+  - Source: [WizardLM/WizardLM_evol_instruct_70k](https://huggingface.co/datasets/WizardLM/WizardLM_evol_instruct_70k)  
+  - Path:  Downloaded and pre-split in `./data_wiz/`  
 
-- **Alpaca**:  
-  Available on HuggingFace: [tatsu-lab/alpaca](https://huggingface.co/datasets/tatsu-lab/alpaca).  
-  Contains 52K instruction-following samples designed for fine-tuning instruction-tuned models.
+- **Alpaca**  
+  - Source: [tatsu-lab/alpaca](https://huggingface.co/datasets/tatsu-lab/alpaca)  
+  - Path:  Downloaded and pre-split in `./data_alpaca/`  
 
-- **Dolly**:  
-  Available on HuggingFace: [databricks/databricks-dolly-15k](https://huggingface.co/datasets/databricks/databricks-dolly-15k).  
-  Comprises 15K human-generated prompt-response pairs across various task types like classification, QA, generation, etc.
+- **Dolly**  
+  - Source: [databricks/databricks-dolly-15k](https://huggingface.co/datasets/databricks/databricks-dolly-15k)  
+  - Path:  Downloaded and pre-split in `./data/`  
 
-Please ensure your custom datasets are aligned with the instruction-response JSON schema and placed in the correct folder before training.
+If you want to use a custom dataset, make sure it follows the same instruction-response JSON format as these folders. Each sample should contain fields such as `"instruction"`, `"input"` (optional), and `"output"`.
 
 
 ## Training
@@ -147,7 +149,7 @@ See the full table in the [paper] for all datasets and baseline comparisons.
 
 ## License
 
-This repository is released under the MIT License. See `LICENSE` for details.
+This repository is released under the Apache License 2.0. See `LICENSE` for details.
 
 ## Contributing
 
