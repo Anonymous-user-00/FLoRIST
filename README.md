@@ -42,11 +42,11 @@ To train a model in a **homogeneous** federated setting:
 
 **FLoRIST**
 ```bash
-python3 main.py --global_model 'meta-llama/Llama-3.2-1B' \
+python3 main.py --global_model 'tinyllama' \
   --data_path "./data" \
-  --output_dir './Llama-3.2-1B-dolly-homo-3-1-8/' \
-  --num_communication_rounds 3 \
-  --local_num_epochs 1 \
+  --output_dir './tinyllama-dolly-homo-1-3-8/' \
+  --num_communication_rounds 1 \
+  --local_num_epochs 3 \
   --florist True \
   --num_clients 8 \
   --threshold 0.9
@@ -54,43 +54,43 @@ python3 main.py --global_model 'meta-llama/Llama-3.2-1B' \
 
 **FLoRA**
 ```bash
-python3 main.py --global_model 'meta-llama/Llama-3.2-1B' \
+python3 main.py --global_model 'tinyllama' \
   --data_path "./data" \
-  --output_dir './Llama-3.2-1B-dolly-homo-3-1-8/' \
-  --num_communication_rounds 3 \
-  --local_num_epochs 1 \
+  --output_dir './tinyllama-dolly-homo-1-3-8/' \
+  --num_communication_rounds 1 \
+  --local_num_epochs 3 \
   --stacking True \
   --num_clients 8
 ```
 
 **FedIT**
 ```bash
-python3 main.py --global_model 'meta-llama/Llama-3.2-1B' \
+python3 main.py --global_model 'tinyllama' \
   --data_path "./data" \
-  --output_dir './Llama-3.2-1B-dolly-homo-3-1-8/' \
-  --num_communication_rounds 3 \
-  --local_num_epochs 1 \
+  --output_dir './tinyllama-dolly-homo-1-3-8/' \
+  --num_communication_rounds 1 \
+  --local_num_epochs 3 \
   --num_clients 8
 ```
 
 **FlexLoRA**
 ```bash
-python3 main.py --global_model 'meta-llama/Llama-3.2-1B' \
+python3 main.py --global_model 'tinyllama' \
   --data_path "./data" \
-  --output_dir './Llama-3.2-1B-dolly-homo-3-1-8/' \
-  --num_communication_rounds 3 \
-  --local_num_epochs 1 \
+  --output_dir './tinyllama-dolly-homo-1-3-8/' \
+  --num_communication_rounds 1 \
+  --local_num_epochs 3 \
   --flex True \
   --num_clients 8
 ```
 
 **FFA-LoRA**
 ```bash
-python3 main.py --global_model 'meta-llama/Llama-3.2-1B' \
+python3 main.py --global_model 'tinyllama' \
   --data_path "./data" \
-  --output_dir './Llama-3.2-1B-dolly-homo-3-1-8/' \
-  --num_communication_rounds 3 \
-  --local_num_epochs 1 \
+  --output_dir './tinyllama-dolly-homo-1-3-8/' \
+  --num_communication_rounds 1 \
+  --local_num_epochs 3 \
   --ffa True \
   --num_clients 8
 ```
@@ -104,7 +104,7 @@ python3 main.py --global_model 'huggyllama/llama-7b' \
   --data_path "./data_wiz" \
   --output_dir './llama7b-wiz-heter-1-1-8/' \
   --num_communication_rounds 1 \
-  --local_num_epochs 1 \
+  --local_num_epochs 3 \
   --florist True \
   --num_clients 8 \
   --threshold 0.80 \
