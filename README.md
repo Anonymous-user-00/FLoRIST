@@ -1,11 +1,20 @@
 # FLoRIST: Singular Value Thresholding for Efficient and Accurate Federated Fine-Tuning of Large Language Models
 
-This repository contains the official implementation of **[FLoRIST]** (FLoRIST: Singular Value Thresholding for Efficient and Accurate Federated Fine-Tuning of Large Language Models), submitted to NeurIPS 2025.
+This repository contains the official implementation of **FLoRIST**, a framework for communication-efficient and performance-preserving federated fine-tuning of large language models (LLMs) using low-rank adapters and singular value thresholding. FLoRIST has been submitted to NeurIPS 2025.
 
-FLoRIST is a communication-efficient algorithm for federated fine-tuning of large language models using low-rank adapters and singular value thresholding. It significantly outperforms existing baselines such as FLoRA, FlexLoRA, and FedIT across diverse datasets and federated settings.
+In federated learning settings, where training data remains decentralized across clients (e.g., institutions or devices), fine-tuning large models becomes challenging due to communication and computational constraints. Parameter-efficient fine-tuning (PEFT) methods such as LoRA allow clients to train compact low-rank adapters locally, but aggregating these adapters efficiently and effectively remains an open problem—especially under heterogeneous client configurations.
 
-<!-- Optional graphic -->
-<!-- ![Approach Overview](./figures/florist_pipeline.png) -->
+FLoRIST addresses this by:
+- **Aggregating directly in the low-rank latent space**, avoiding the construction of full dense update matrices.
+- **Applying singular value thresholding** to retain only the most informative components, enabling compact and performant global adapters.
+- **Supporting heterogeneous local ranks** across clients without requiring full-rank communication or complex coordination.
+- **Introducing two variants**: `FLoRIST-O` for optimal performance, and `FLoRIST-E` for maximum communication efficiency.
+
+FLoRIST outperforms state-of-the-art baselines such as FedIT, FLoRA, FlexLoRA, and FFA-LoRA across multiple datasets (Dolly, Alpaca, WizardLM) and model scales (TinyLlama, Llama-3.2-1B, Llama-7B), achieving  **lower communication** while matching or exceeding their accuracy.
+
+<p align="center">
+  <img src="./figures/florist_workflow.pdf" width="75%" alt="FLoRIST Workflow">
+</p>
 
 ## Requirements
 
