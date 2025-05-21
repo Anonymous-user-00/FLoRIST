@@ -13,7 +13,7 @@ FLoRIST addresses this by:
 FLoRIST outperforms state-of-the-art baselines such as FedIT, FLoRA, FlexLoRA, and FFA-LoRA across multiple datasets (Dolly, Alpaca, WizardLM) and model scales (TinyLlama, Llama-3.2-1B, Llama-7B), achieving  **lower communication** while matching or exceeding their accuracy.
 
 <p align="center">
-  <img src="./tree/main/figures/workflow-8.png" width="75%" alt="FLoRIST Workflow">
+  <img src="./figures/workflow-8.png" width="75%" alt="FLoRIST Workflow">
 </p>
 
 ## Requirements
